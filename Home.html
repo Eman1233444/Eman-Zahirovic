@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Webb Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #171717;
+            color: #dbdbdb;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 20px auto;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-frame {
+            flex: 0 0 calc(50% - 20px);
+            margin: 10px;
+            border: 2px solid #dbdbdb;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .text-area {
+            flex: 1;
+            padding: 20px;
+            text-align: justify;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .instagram-link {
+            color: #ccff00;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .instagram-icon {
+            margin-left: 5px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination-item {
+            margin: 0 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .login-logout {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .logout {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dobrodošli na Moju Web Stranicu</h1>
+    </header>
+
+    <button class="login-logout" onclick="showPopup()">Log In</button>
+    <button class="logout" onclick="signOut()">Log Out</button>
+
+    <section>
+        <div class="image-frame">
+            <img src="putanja/do/slike1.jpg" alt="Slika 1">
+        </div>
+        
+        <div class="text-area">
+            <p>Ovdje možete dodati svoj tekst koji će biti centriran. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel eleifend velit. Sed eu erat a ligula tristique fermentum.</p>
+        </div>
+
+        <div class="instagram-link">
+            Za više slika, posjetite: <a href="https://www.instagram.com/eman_zahirovic0/" target="_blank">Instagram profil</a>
+            <img src="path/to/instagram-icon.png" alt="Instagram Icon" class="instagram-icon">
+        </div>
+    </section>
+
+    <div class="popup" id="popup">
+        <img src="path/to/small-icon.png" alt="Small Icon">
+        <p>Logovani ste !</p>
+    </div>
+
+    <script>
+        function showPopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'block';
+
+            setTimeout(function () {
+                popup.style.display = 'none';
+            }, 3000);
+        }
+
+        function signOut() {
+            window.location.href = 'https://www.google.com';
+        }
+    </script>
+</body>
+</html>
+
